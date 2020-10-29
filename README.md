@@ -10,6 +10,19 @@ with the maintenance of an official image for [ADempiere-Vue](https://github.com
 To use this Docker image you must have your Docker engine release number greater
 than or equal to 3.0.
 
+### For all enviroment you should run the follow images:
+- ADempiere gRPC: https://hub.docker.com/r/erpya/adempiere-grpc-all-in-one
+```shell
+docker pull erpya/adempiere-grpc-all-in-one
+```
+- Proxy ADempiere API: https://hub.docker.com/r/erpya/proxy-adempiere-api
+```shell
+docker pull erpya/proxy-adempiere-api
+```
+- ADempiere Vue: https://hub.docker.com/r/erpya/adempiere-vue
+```shell
+docker pull erpya/adempiere-vue
+```
 
 ## Run docker container:
 
