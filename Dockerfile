@@ -7,7 +7,7 @@ ARG RELEASE_VERSION="rt-1.0"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="adempiere-vue-$RELEASE_VERSION.zip" \
-	VUE_APP_API_REST_ADDRESS="localhost" \
+	VUE_APP_API_REST_ADDRESS="http://localhost" \
 	VUE_APP_API_REST_PORT="8085"
 
 # Create app directory

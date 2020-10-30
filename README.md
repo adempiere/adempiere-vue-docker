@@ -25,10 +25,10 @@ docker build -t adempiere-vue -f ./Dockerfile .
 Run container container:
 ```shell
 docker run -it \
-  --name adempiere-vue \
+	--name adempiere-vue \
 	-p 9526:9526 \
-  -e VUE_APP_API_REST_ADDRESS="http://localhost" \
-  -e VUE_APP_API_REST_PORT=8085 \
+	-e VUE_APP_API_REST_ADDRESS="http://localhost" \
+	-e VUE_APP_API_REST_PORT=8085 \
 	adempiere-vue
 ```
 
