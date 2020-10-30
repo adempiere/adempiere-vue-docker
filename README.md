@@ -1,5 +1,9 @@
 # ADempiere-Vue Docker Official Repository
 
+<div align="center"><img src="https://camo.githubusercontent.com/911c5d54ded447403e56de3f96f332c06bceb8bd/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62312f4164656d70696572652d6c6f676f2e706e67" style="text-align:center;" width="400" /></div>
+
+![version](https://img.shields.io/badge/node-v12.x-blue.svg)
+
 [![Join the chat at https://gitter.im/adempiere/adempiere-docker](https://badges.gitter.im/adempiere/adempiere-docker.svg)](https://gitter.im/adempiere/adempiere-docker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Welcome to the official repository for [ADempiere-Vue](https://github.com/adempiere/adempiere-vue) Docker. This project is related
@@ -15,16 +19,27 @@ than or equal to 3.0.
 
 Build docker image:
 ```shell
-docker build -it adempiere-vue -f ./Dockerfile .
+docker build -t adempiere-vue -f ./Dockerfile .
 ```
 
 Run container container:
 ```shell
-docker run --name adempiere-ui-client -it \
+docker run -it \
+  --name adempiere-vue \
 	-p 9526:9526 \
-	-v /opt/Apps/adempiere-vue \
+  -e VUE_APP_API_REST_ADDRESS="http://localhost" \
+  -e VUE_APP_API_REST_PORT=8085 \
 	adempiere-vue
 ```
+
+
+## Environment variables for the configuration
+
+ * `VUE_APP_API_REST_ADDRESS`: It indicates the address of the server to which you will point the service [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api), by default its value is `http://localhost`.
+ * `VUE_APP_API_REST_PORT`: It indicates the port that the [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api) will access, by default its value is `8085`.
+
+NOTE: If you do not change the values of the environment variables, it is not necessary to indicate them in the `docker run` command, since the default values will be set.
+
 
 ## Run docker container with docker-compose:
 Or easy run container using docker-compose with follow command:
