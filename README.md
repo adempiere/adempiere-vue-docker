@@ -17,9 +17,14 @@ than or equal to 3.0.
 
 ## Run docker container:
 
-Build docker image:
+Build docker image (for development only):
 ```shell
-docker build -t adempiere-vue -f ./Dockerfile .
+docker build -t erpya/adempiere-vue:dev -f ./Dockerfile .
+```
+
+Download docker image:
+```shell
+docker pull erpya/adempiere-vue
 ```
 
 Run container container:
@@ -29,7 +34,7 @@ docker run -it \
 	-p 9526:9526 \
 	-e VUE_APP_API_REST_ADDRESS="http://localhost" \
 	-e VUE_APP_API_REST_PORT=8085 \
-	adempiere-vue
+	erpya/adempiere-vue
 ```
 
 
