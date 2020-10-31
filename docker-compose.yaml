@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   web-client:
-    container_name: adempiere-ui-client
+    container_name: adempiere-vue
     network_mode: bridge
     build: .
     volumes:
@@ -14,9 +14,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - RELEASE_VERSION=3.9.3
-      - VUE_APP_PROXY_ADDRESS=localhost
-      - VUE_APP_PROXY_PORT=8989
-    # TODO: Add enviroment variables to ports
+      - VUE_APP_API_REST_ADDRESS=http://localhost
+      - VUE_APP_API_REST_PORT=8085
     ports:
       - 9526:9526 # Prod
