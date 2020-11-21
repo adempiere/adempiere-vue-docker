@@ -7,8 +7,12 @@ ARG RELEASE_VERSION="rt-1.2"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="adempiere-vue-$RELEASE_VERSION.zip" \
-	VUE_APP_API_REST_ADDRESS="http://localhost" \
-	VUE_APP_API_REST_PORT="8085"
+	SERVER_HOST="localhost" \
+	SERVER_PORT="9527" \
+	API_HOST="localhost" \
+	API_PORT="8085" \
+	IMAGE_HOST="localhost" \
+	IMAGE_PORT="8085" \
 
 
 COPY default.json /tmp/
