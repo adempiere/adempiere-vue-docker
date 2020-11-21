@@ -12,7 +12,7 @@ ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	API_HOST="localhost" \
 	API_PORT="8085" \
 	IMAGE_HOST="localhost" \
-	IMAGE_PORT="8085" \
+	IMAGE_PORT="8085"
 
 
 COPY default.json /tmp/
@@ -37,7 +37,7 @@ RUN mkdir -p /opt/Apps && \
 	mv "adempiere-vue-$RELEASE_VERSION" adempiere-vue && \
 	# Change workdir
 	cd /opt/Apps/adempiere-vue && \
-	cp /tmp/default.json config/
+	cp /tmp/default.json config/ && \
 	# TODO: Generate releases versions with that include libraries and compiled files ready for production
 	npm install
 
