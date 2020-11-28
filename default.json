@@ -6,11 +6,13 @@
   "adempiere": {
     "api": {
       "url": "http://API_HOST:API_PORT",
-      "service": "/adempiere-api"
+      "service": "/adempiere-api",
+      "fullPath": "http://API_HOST:API_PORT/adempiere-api"
     },
     "images": {
       "url": "http://IMAGE_HOST:IMAGE_PORT",
-      "service": "/adempiere-api"
+      "service": "/adempiere-api/img",
+      "fullPath": "http://API_HOST:API_PORT/adempiere-api/img"
     }
   }
 }
