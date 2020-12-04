@@ -3,7 +3,7 @@ FROM node:12-alpine3.12
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="ADempiere-Vue"
 
-ARG RELEASE_VERSION="rt-1.7"
+ARG RELEASE_VERSION="rt-1.8"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="adempiere-vue-$RELEASE_VERSION.zip" \
