@@ -1,6 +1,6 @@
 FROM node:12-alpine3.12
 
-LABEL maintainer="EdwinBetanc0urt@outlook.com" \
+LABEL maintainer="EdwinBetanc0urt@outlook.com, elsiosanches@gmail.com" \
 	description="ADempiere-Vue"
 
 ARG RELEASE_VERSION="rt-2.2"
@@ -47,6 +47,6 @@ CMD sed -i "s|SERVER_HOST|$SERVER_HOST|g" config/default.json && \
     sed -i "s|SERVER_PORT|$SERVER_PORT|g" config/default.json && \
     sed -i "s|API_HOST|$API_HOST|g" config/default.json && \
     sed -i "s|API_PORT|$API_PORT|g" config/default.json && \
-    sed -i "s|IMAGE_HOST|$IMAGE_HOST|g" config/default.json && \ 
-    sed -i "s|IMAGE_PORT|$IMAGE_PORT|g" config/default.json && \ 
+    sed -i "s|IMAGE_HOST|$IMAGE_HOST|g" config/default.json && \
+    sed -i "s|IMAGE_PORT|$IMAGE_PORT|g" config/default.json && \
 npm run preview

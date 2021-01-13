@@ -45,8 +45,10 @@ Run container container:
 docker run -it \
 	--name adempiere-vue \
 	-p 9526:9526 \
-	-e VUE_APP_API_REST_ADDRESS="http://localhost" \
+	-e VUE_APP_API_REST_ADDRESS="//localhost" \
 	-e VUE_APP_API_REST_PORT=8085 \
+    -e API_HOST="//localhost" \
+    -e IMAGE_HOST="//localhost" \
 	erpya/adempiere-vue
 ```
 
