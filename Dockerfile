@@ -30,10 +30,8 @@ RUN cd /usr/share/nginx/html && \
 	unzip -o $BINARY_NAME && \
 	rm $BINARY_NAME && \
 	# Rename project folder
-	dist/* /usr/share/nginx/html/
-	# Change workdir
-	cd /opt/Apps/adempiere-vue
+	mv dist/* /usr/share/nginx/html/
 	
 WORKDIR /usr/share/nginx/html/
 
-CMD sh Start.sh
+CMD sh Start.sh && tail -f /dev/null
