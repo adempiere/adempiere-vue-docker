@@ -17,7 +17,6 @@ COPY Start.sh .
 
 # Create app directory
 RUN cd /usr/share/nginx/html && \
-	cd /opt/Apps && \
 	# Install needed SO packages
 	apk add --no-cache \
 		ca-certificates \
