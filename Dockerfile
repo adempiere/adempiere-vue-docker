@@ -31,6 +31,4 @@ RUN cd /usr/share/nginx/html && \
 	# Rename project folder
 	mv dist/* /usr/share/nginx/html/
 	
-WORKDIR /usr/share/nginx/html/
-
 CMD sh Start.sh && tail -f /dev/null
