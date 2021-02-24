@@ -32,7 +32,7 @@ RUN cd /usr/share/nginx/html && \
 	# Rename project folder
 	dist/* /usr/share/nginx/html/
 	# Change workdir
-	cd /opt/Apps/adempiere-vue && \
+	cd /opt/Apps/adempiere-vue
 	
 WORKDIR /usr/share/nginx/html/
 
