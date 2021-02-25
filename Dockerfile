@@ -9,7 +9,7 @@ ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="Adempiere-Vue.zip" \
 	SERVER_HOST="localhost" \
 	SERVER_PORT="9527" \
-	API_URL="http://localhost:8085" \
+	API_URL="http://localhost:8085"
 
 COPY Start.sh .
 
