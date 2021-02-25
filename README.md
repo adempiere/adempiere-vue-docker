@@ -44,17 +44,15 @@ Run container container:
 ```shell
 docker run -it \
 	--name adempiere-vue \
-	-p 9526:9526 \
-	-e VUE_APP_API_REST_ADDRESS="http://localhost" \
-	-e VUE_APP_API_REST_PORT=8085 \
+	-p 80:80 \
+	-e API_URL="http://localhost:8085" \
 	erpya/adempiere-vue
 ```
 
 
 ## Environment variables for the configuration
 
- * `VUE_APP_API_REST_ADDRESS`: It indicates the address of the server to which you will point the service [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api), by default its value is `http://localhost`.
- * `VUE_APP_API_REST_PORT`: It indicates the port that the [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api) will access, by default its value is `8085`.
+ * `API_URL`: It indicates the address of the server to which you will point the service [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api), by default its value is `http://localhost:8085`.
 
 NOTE: If you do not change the values of the environment variables, it is not necessary to indicate them in the `docker run` command, since the default values will be set.
 
