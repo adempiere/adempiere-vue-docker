@@ -3,7 +3,7 @@ FROM nginx:alpine
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="ADempiere-Vue"
 
-ARG RELEASE_VERSION="rt-2.8"
+ARG RELEASE_VERSION="rt-2.9"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="Adempiere-Vue.zip" \
