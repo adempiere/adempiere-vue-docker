@@ -1,32 +1,38 @@
-FROM nginx:alpine
+FROM nginx:1.19.9-alpine
 
 LABEL maintainer="EdwinBetanc0urt@outlook.com" \
 	description="ADempiere-Vue"
+
+# Add operative system dependencies
+RUN	echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
+	rm -rf /var/cache/apk/* && \
+	apk update && \
+	apk add \
+		--virtual .build-deps \
+	 	ca-certificates \
+	 	curl \
+		unzip
 
 ARG RELEASE_VERSION="rt-3.3"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="Adempiere-Vue.zip" \
-	SERVER_HOST="localhost" \
-	SERVER_PORT="9527" \
-	API_URL="http://localhost:8085"
+	API_URL="https://api.erpya.com"
 
-COPY Start.sh .
+COPY start.sh .
 
 # Create app directory
 RUN cd /usr/share/nginx/html && \
-	# Install needed SO packages
-	apk add --no-cache \
-		ca-certificates \
-		curl \
-		unzip && \
 	# Download release file
 	curl --output $BINARY_NAME \
-                -L "$URL_REPO/releases/download/$RELEASE_VERSION/$BINARY_NAME" && \
+		-L "$URL_REPO/releases/download/$RELEASE_VERSION/$BINARY_NAME" && \
 	# uncompress and delete files
 	unzip -o $BINARY_NAME && \
+	# delete unised files
+	apk del .build-deps && \
 	rm $BINARY_NAME && \
+	rm -rf /tmp/* && \
 	# Rename project folder
 	mv dist/* /usr/share/nginx/html/
-	
-CMD sh Start.sh && tail -f /dev/null
+
+CMD 'sh' 'start.sh'

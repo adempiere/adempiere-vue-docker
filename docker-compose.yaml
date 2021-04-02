@@ -1,20 +1,13 @@
 version: '3.7'
 
 services:
-  web-client:
+  vue-app:
     container_name: adempiere-vue
-    network_mode: bridge
     build: .
-    volumes:
-      - /opt/Apps/adempiere-vue
-      - /opt/Apps/adempiere-vue/node_modules
-    labels:
-      - app=adempiere-vue
-      - maintainer=EdwinBetanc0urt@outlook.com
+    # image: erpya/adempiere-vue
     stdin_open: true
     tty: true
     environment:
-      - VUE_APP_API_REST_ADDRESS=http://localhost
-      - VUE_APP_API_REST_PORT=8085
+      - API_URL=https://api.erpya.com
     ports:
-      - 9526:9526 # Prod
+      - 80:80
