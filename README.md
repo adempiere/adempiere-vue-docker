@@ -1,6 +1,8 @@
 # ADempiere-Vue Docker Official Repository
 
-<div align="center"><img src="https://camo.githubusercontent.com/911c5d54ded447403e56de3f96f332c06bceb8bd/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62312f4164656d70696572652d6c6f676f2e706e67" style="text-align:center;" width="400" /></div>
+<div align="center">
+  <img src="https://camo.githubusercontent.com/911c5d54ded447403e56de3f96f332c06bceb8bd/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62312f4164656d70696572652d6c6f676f2e706e67" style="text-align:center;" width="400" />
+</div>
 
 ![version](https://img.shields.io/badge/node-v12.x-blue.svg)
 
@@ -45,19 +47,20 @@ Run container container:
 docker run -it \
 	--name adempiere-vue \
 	-p 80:80 \
-	-e API_URL="http://localhost:8085" \
+	-e API_URL="https://api.erpya.com" \
 	erpya/adempiere-vue
 ```
 
 
 ## Environment variables for the configuration
 
- * `API_URL`: It indicates the address of the server to which you will point the service [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api), by default its value is `http://localhost:8085`.
+ * `API_URL`: It indicates the address of the server to which you will point the service [Proxy-Adempiere-Api](https://github.com/adempiere/proxy-adempiere-api), by default its value is `https://https://api.erpya.com`.
 
 NOTE: If you do not change the values of the environment variables, it is not necessary to indicate them in the `docker run` command, since the default values will be set.
 
 
 ## Run docker container with docker-compose:
+
 Or easy run container using docker-compose with follow command:
 ```shell
 docker-compose up
