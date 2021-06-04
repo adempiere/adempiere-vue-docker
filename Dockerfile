@@ -13,7 +13,7 @@ RUN	echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
 	 	curl \
 		unzip
 
-ARG RELEASE_VERSION="rt-4.2"
+ARG RELEASE_VERSION="rt-4.3"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="Adempiere-Vue.zip" \
