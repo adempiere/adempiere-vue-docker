@@ -12,7 +12,7 @@ RUN	echo rm -rf /var/cache/apk/* && \
 	 	curl \
 		unzip
 
-ARG RELEASE_VERSION="rt-4.7"
+ARG RELEASE_VERSION="rt-4.8"
 
 ENV URL_REPO="https://github.com/adempiere/adempiere-vue" \
 	BINARY_NAME="Adempiere-Vue.zip" \
